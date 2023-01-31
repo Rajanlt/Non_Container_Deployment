@@ -6,7 +6,8 @@ pipeline {
 //     JFROG_PASSWORD  = credentials('jfrog-password')
 //   }
     stages {
-        stage('Checkout Git Repository') {
+        stage('Checkout Git Repository')
+         {
             steps {
                 git branch: 'artifactory', url: 'https://github.com/Rajanlt/Non_Container_Deployment.git'
             }
@@ -16,11 +17,12 @@ pipeline {
               sh './mvn install'
            }
         }
-       stage('Upload Binaries to Nexus Artifactory') {
+       stage('Upload Binaries to Nexus Artifactory')
+         {
         steps {
         sh 'nexusArtifactUploader artifacts: [[artifactId: 'maven-snapshots', classifier: '', file: '/workspace/target', type: 'jar']], credentialsId: 'nexus_id', groupId: 'nexus3', nexusUrl: 'http://13.233.166.229:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.166.229:8081/repository/maven-snapshots/', version: 'nexus3''
              }
-       }
+        }
         stage('Building Docker Image'){
         steps{
               sh '''
