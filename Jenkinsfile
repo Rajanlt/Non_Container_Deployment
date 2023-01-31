@@ -19,8 +19,8 @@ pipeline {
        stage('Upload Binaries to Nexus Artifactory') {
         steps {
         sh 'nexusArtifactUploader artifacts: [[artifactId: 'maven-snapshots', classifier: '', file: '/workspace/target', type: 'jar']], credentialsId: 'nexus_id', groupId: 'nexus3', nexusUrl: 'http://13.233.166.229:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.166.229:8081/repository/maven-snapshots/', version: 'nexus3''
-           
-        }
+             }   
+        
       stage('Building Docker Image'){
           steps{
               sh '''
