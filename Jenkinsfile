@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout Git Repository')
          {
             steps {
-                git branch: 'artifactory', url: 'https://github.com/Rajanlt/Non_Container_Deployment.git'
+                sh 'git clone https://github.com/Rajanlt/Non_Container_Deployment.git'
             }
         }
         stage('Build Maven Job'){
