@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build Maven Job'){
            steps {
-              sh './mvn install'
+              sh 'mvn install'
            }
         }
        stage('Upload Binaries to Nexus Artifactory')
