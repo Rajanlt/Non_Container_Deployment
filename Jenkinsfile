@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Git Repository') {
             steps {
-                git branch: 'artifactory', url: 'https://github.com/darinpope/java-web-app'
+                git branch: 'artifactory', url: 'https://github.com/Rajanlt/Non_Container_Deployment.git'
             }
         }
         stage('Build Maven Job'){
