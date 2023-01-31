@@ -9,6 +9,7 @@ pipeline {
         stage('Checkout Git Repository')
          {
             steps {
+                sh 'rm -rf Non_Container_Deployment'
                 sh 'git clone https://github.com/Rajanlt/Non_Container_Deployment.git'
             }
         }
