@@ -16,9 +16,9 @@ pipeline {
               sh './mvn install'
            }
         }
-       stage('Upload Binaries to Jfrog Artifactory') {
+       stage('Upload Binaries to Nexus Artifactory') {
         steps {
-        sh 'jf rt upload --url http://172.17.0.3:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/demo-0.0.1-SNAPSHOT.jar java-web-app/'
+        sh 'nexusArtifactUploader artifacts: [[artifactId: 'maven-snapshots', classifier: '', file: '/workspace/target', type: 'jar']], credentialsId: 'nexus_id', groupId: 'nexus3', nexusUrl: '13.233.166.229:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.166.229:8081/repository/maven-snapshots/', version: 'nexus3''
           }
         }
       stage('Building Docker Image'){
