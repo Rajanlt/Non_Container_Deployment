@@ -1,5 +1,5 @@
 pipeline {
-//     agent any
+     agent any
 //     environment {
 //     CI = true
 //     ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
