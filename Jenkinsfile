@@ -22,7 +22,7 @@ pipeline {
          {
          steps 
               {
-        nexusArtifactUploader artifacts: [[artifactId: 'http://13.233.166.229:8081/repository/maven-snapshots/', classifier: '', file: '/workspace/target/*.war', type: 'maven-snapshots']], credentialsId: 'nexus_id', groupId: 'nexus', nexusUrl: '13.233.166.229:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.166.229:8081/repository/maven-snapshots/', version: 'nexusid'       
+        nexusArtifactUploader artifacts: [[artifactId: 'http://13.233.166.229:8081/repository/maven-snapshots/', classifier: '', file: '/workspace/target/*.jar', type: 'maven-snapshots']], credentialsId: 'nexus_id', groupId: 'nexus', nexusUrl: '13.233.166.229:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://13.233.166.229:8081/repository/maven-snapshots/', version: 'nexusid'       
         }
          }
     stage('Building Docker Image'){
