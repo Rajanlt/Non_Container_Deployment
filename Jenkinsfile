@@ -30,8 +30,8 @@ pipeline {
 //        timeout(time: , unit: 'MINUTES') {
 //           waitForQualityGate abortPipeline: true
 //          }
-    }
-  }
+//     }
+//   }
     stage('Upload Binaries to Nexus Artifactory')
          {
          steps 
