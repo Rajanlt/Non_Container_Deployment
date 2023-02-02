@@ -22,7 +22,7 @@ pipeline {
       {
     
     steps {
-     withSonarQubeEnv('sonarqube') {
+     withSonarQubeEnv('SonarQube') {
          sh "/opt/sonar-scanner/bin"
         }
 //        timeout(time:  unit: 'MINUTES') {
