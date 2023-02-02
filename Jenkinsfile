@@ -18,20 +18,20 @@ pipeline {
               sh 'mvn install'
            }
         }
-//     stage('Sonarqube')
-//       {
-//     environment {
-//       scannerHome = tool 'sonarqube'
-//       }
-//     steps {
-//      withSonarQubeEnv('sonarqube') {
-//          sh "${scannerHome}/bin/sonar-scanner"
-//         }
-//        timeout(time: , unit: 'MINUTES') {
-//           waitForQualityGate abortPipeline: true
-//          }
-//     }
-//   }
+    stage('Sonarqube')
+      {
+    environment {
+      scannerHome = tool 'sonarqube'
+      }
+    steps {
+     withSonarQubeEnv('sonarqube') {
+         sh "${scannerHome}/bin/sonar-scanner"
+        }
+       timeout(time: , unit: 'MINUTES') {
+          waitForQualityGate abortPipeline: true
+         }
+    }
+  }
     stage('Upload Binaries to Nexus Artifactory')
          {
          steps 
